@@ -128,7 +128,7 @@ Use concise STAR-style answers. Keep the response credible and concrete. If the 
 
 Default to Markdown unless the user asks for another format. For a full answer pack, create a Markdown document file and use `references/output-template.md` as the document structure.
 
-For long packs, organize by topic and difficulty. Include a compact "quick memorization" version and a deeper "understanding" version when useful. Do not only answer in chat when the user asks for a pack, document, collection, output file, or organized answers; write a `.md` artifact and report its path.
+For long packs, organize by topic and difficulty, then answer each question one by one with detailed explanations, spoken answers, and follow-up questions. Do not create an overall "quick memorization" or summary-memory section; interview preparation should remain question-by-question. Do not only answer in chat when the user asks for a pack, document, collection, output file, or organized answers; write a `.md` artifact and report its path.
 
 Do not include a "Final Review Checklist" or equivalent quality checklist in the final document. Use review checklists internally only.
 
