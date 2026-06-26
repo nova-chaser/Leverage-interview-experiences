@@ -1,0 +1,45 @@
+---
+description: Build detailed interview question answer packs from searched or user-provided questions.
+globs:
+  - "**/*.md"
+alwaysApply: false
+---
+
+# Interview Answer Pack Builder
+
+Apply this rule when the user asks to search for interview questions, answer pasted interview questions, organize an interview question bank, or create an interview answer document.
+
+## Modes
+
+- Role search: search for real role-specific interview questions, cite sources, then answer.
+- Direct answer: answer questions pasted by the user; do not search for more questions unless verification is needed.
+- Question bank: classify, deduplicate, group, and answer a large pasted/uploaded question set.
+
+## Required Workflow
+
+- Classify every question as knowledge, scenario, project detail, strategy expansion, or behavioral.
+- For more than 8 questions, split the set into coherent topic batches before answering.
+- Keep related questions together.
+- Use agents/workers if available; otherwise process batches sequentially.
+- Merge all batches into one coherent Markdown document.
+- For complete packs, write a `.md` file instead of only replying in chat.
+- In role-search mode, prioritize real interview sources such as Nowcoder/Niuke, Zhihu, Juejin, CSDN, LeetCode/Likou, LeetCode Discuss, Glassdoor, GitHub, and similar sources appropriate to the target region.
+
+## Answer Quality
+
+- Output all final user-facing content in Chinese by default. Keep necessary technical terms, URLs, API names, and code identifiers in their original language.
+- Preserve technical terms.
+- Make answers detailed enough for learning and oral interview practice.
+- Use length targets unless the user asks for concise output: normal knowledge questions 500-800 Chinese characters, high-frequency core questions 1000-1500 Chinese characters, scenario questions 900-1400 Chinese characters, project questions 700-1200 Chinese characters, and strategy expansion questions 1200-2000 Chinese characters plus a comparison table.
+- Each major question should include a direct answer, detailed explanation, spoken interview answer, likely follow-ups, and common mistakes.
+- Label scenario assumptions.
+- Never fabricate the user's project facts.
+- Collect project background before final personal answers when facts are missing.
+- Expand strategy questions into common strategies and tradeoffs.
+- Cite sources when search is used.
+
+## Output
+
+Default output file: `interview-answer-pack.md`.
+
+Use review checklists internally only. Do not include a "Final Review Checklist" section in the final document.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interview Answer Pack Builder"
+  short_description: "Build sourced interview answer packs."
+  default_prompt: "Use $interview-answer-pack-builder to collect interview questions for a target role or answer the questions I provide."
