@@ -119,7 +119,13 @@ skill 会优先使用真实面经和题源，例如：
 将整个目录放到 Codex skills 目录中：
 
 ```text
-C:\Users\YPB\.codex\skills\interview-answer-pack-builder
+<CODEX_HOME>/skills/interview-answer-pack-builder
+```
+
+如果没有设置 `CODEX_HOME`，通常可以放到：
+
+```text
+~/.codex/skills/interview-answer-pack-builder
 ```
 
 然后在 Codex 中直接调用：
@@ -142,7 +148,7 @@ assets/adapters/.cursor/rules/interview-answer-pack-builder.mdc
 可以用脚本安装到目标项目：
 
 ```powershell
-python "C:\Users\YPB\.codex\skills\interview-answer-pack-builder\scripts\install_adapters.py" --target "你的项目路径"
+python "<skill-dir>/scripts/install_adapters.py" --target "<project-path>"
 ```
 
 默认会安装：
@@ -157,25 +163,25 @@ GEMINI.md
 只安装 Claude Code 相关文件：
 
 ```powershell
-python "C:\Users\YPB\.codex\skills\interview-answer-pack-builder\scripts\install_adapters.py" --target "你的项目路径" --tools agents,claude
+python "<skill-dir>/scripts/install_adapters.py" --target "<project-path>" --tools agents,claude
 ```
 
 只安装 Cursor rule：
 
 ```powershell
-python "C:\Users\YPB\.codex\skills\interview-answer-pack-builder\scripts\install_adapters.py" --target "你的项目路径" --tools cursor
+python "<skill-dir>/scripts/install_adapters.py" --target "<project-path>" --tools cursor
 ```
 
 预览将要写入的文件：
 
 ```powershell
-python "C:\Users\YPB\.codex\skills\interview-answer-pack-builder\scripts\install_adapters.py" --target "你的项目路径" --dry-run
+python "<skill-dir>/scripts/install_adapters.py" --target "<project-path>" --dry-run
 ```
 
 覆盖已有文件：
 
 ```powershell
-python "C:\Users\YPB\.codex\skills\interview-answer-pack-builder\scripts\install_adapters.py" --target "你的项目路径" --force
+python "<skill-dir>/scripts/install_adapters.py" --target "<project-path>" --force
 ```
 
 ## 目录结构
@@ -209,8 +215,10 @@ interview-answer-pack-builder/
 
 ```powershell
 $env:PYTHONUTF8='1'
-python "C:\Users\YPB\.codex\skills\.system\skill-creator\scripts\quick_validate.py" "C:\Users\YPB\.codex\skills\interview-answer-pack-builder"
+python "<CODEX_HOME>/skills/.system/skill-creator/scripts/quick_validate.py" "<CODEX_HOME>/skills/interview-answer-pack-builder"
 ```
+
+如果没有设置 `CODEX_HOME`，把 `<CODEX_HOME>` 替换成 `~/.codex` 或你的实际 Codex 配置目录。
 
 预期结果：
 
